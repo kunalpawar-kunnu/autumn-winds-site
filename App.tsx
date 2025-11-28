@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import AdminDashboard from './components/AdminDashboard';
-import UserDashboard from './components/UserDashboard';
-import MusicPlayer from './components/MusicPlayer';
+import AdminDashboard from "./components/AdminDashboard";
+import UserDashboard from "./components/UserDashboard";
+import MusicPlayer from "./components/MusicPlayer";
 import { Role, Song } from './types';
 import { Shield, User, Leaf } from 'lucide-react';
 
