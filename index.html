@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autumn Winds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              autumn: {
+                red: '#8B1E1E',      // Deep Maple Red
+                orange: '#C85A17',   // Burnt Orange
+                gold: '#D4AF37',     // Metallic Gold
+                light: '#F5DEB3',    // Wheat/Parchment
+                bg: '#0F0A06',       // Very Dark Brown/Black
+                card: '#1A120B',     // Dark Wood Tone
+                accent: '#A0522D',   // Sienna
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'leaf-fall': 'fall 10s linear infinite',
+              'fade-up': 'fadeUp 0.7s ease',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              fall: {
+                '0%': { transform: 'translateY(-10%) rotate(0deg)', opacity: '0' },
+                '10%': { opacity: '1' },
+                '100%': { transform: 'translateY(100vh) rotate(360deg)', opacity: '0' }
+              },
+              fadeUp: {
+                'from': { opacity: '0', transform: 'translateY(25px)' },
+                'to': { opacity: '1', transform: 'translateY(0)' }
+              },
+              floatUp: {
+                'from': { transform: 'translateY(100vh) scale(0.5)', opacity: '0.7' },
+                'to': { transform: 'translateY(-10vh) scale(1.2)', opacity: '0' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0F0A06;
+        color: #E2E8F0;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0F0A06;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3E2723;
+        border-radius: 4px;
+        border: 1px solid #0F0A06;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #8B1E1E;
+      }
+      .font-display {
+        font-family: 'Playfair Display', serif;
+      }
+
+      /* Animated Floating Particles */
+      .particles {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .particle {
+        position: absolute;
+        width: 10px; height: 10px;
+        background: rgba(255,255,255,0.4);
+        border-radius: 50%;
+        animation: floatUp linear infinite;
+      }
+      
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
